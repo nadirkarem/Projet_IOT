@@ -1,0 +1,519 @@
+/* Importation des Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Style global */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #8b8b8b; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Hauteur minimale pour occuper toute la page */
+}
+
+body.dark-mode {
+    background: linear-gradient(to bottom, #2c2c2c, #1f1f1f);
+    color: #fdfdfd;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+    background: #b2b2b2bb;
+    color: #000000;
+    transition: background 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease, color 0.3s ease;
+}
+
+/* Navigation */
+
+/* Navbar en mode nuit (par défaut) */
+.navbar, .dark-mode .navbar {
+    background: #2c2c2c00;
+    /*border-bottom: 1px solid #333; */
+    /*box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.5);*/
+    transition: background 0.3s ease, color 0.3s ease;
+    
+}
+
+/* Navbar en mode jour */
+.light-mode .navbar {
+    background-color: #bababa00;
+    /* border-bottom: 1px solid #ddd;*/
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode .navbar a {
+    color: #333;  /* Liens en mode jour */
+    transition: color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .navbar a {
+    color: #fdfdfd;  /* Liens en mode nuit */
+    transition: color 0.3s ease, color 0.3s ease;
+}
+
+
+.navbar-brand { /* Titre ÉcoLogement en haut a gauche*/
+    color: #7f7f7f !important;  /* Texte en blanc */
+    font-weight: bold;
+    font-size: 3 vh;
+}
+
+.navbar-nav .nav-link {
+    color: #898888 !important;  /* Blanc pour les liens */
+    font-size: 2.5vh;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #388e3c !important;  /* Vert fluo au survol */
+}
+
+.nav-link.active { /* Fenêtre active en écriture noir et fond vert  */
+    color: #000 !important;
+    background-color:  #388e3c!important;  /* Vert fluo pour le lien actif */
+}
+
+/* Mode jour */
+.light-mode .navbar-nav .nav-link.active { /* Fenêtre active en écriture blanche et fond vert  */
+    color: #fff !important;  
+    background-color: #2c6e2f !important;  
+    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease, color 0.3s ease;
+}
+
+/* Conteneur dans lequel il y a les éléments principaux + navbar*/
+.container {
+    flex: 1;
+    padding: 5vh;
+    background: #1e1e1e00;  
+    border-radius: 1vh;
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.5);
+}
+
+/* Conteneur principal en mode jour */
+
+.light-mode .container {
+    background: #ffffff;  /* Fond blanc */
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);  /* Ombre plus douce */
+    border: 1px solid #ddd;  /* Bordure légère */
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+
+/* Titres */
+h1, h2 {
+    color: #388e3c;  
+    margin-bottom: 3vh;
+    text-align: center;
+    font-size: 3.5vh;
+}
+
+/* Boutons */
+.btn-primary {
+    background-color: #43a047;  /* Vert vif */
+    border: none;
+    border-radius: 2vh;
+    padding: 1.5vh 3vh;
+    font-size: 2vh;
+    color: #ffffff;  /* Texte blanc */
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #388e3c;  /* Vert foncé au survol */
+    transform: scale(1.05);
+}
+
+.btn-outline-secondary {
+    height : 7vh;
+    background-color: #898989!important ;/* Vert assombri */
+    font-size : 3vh;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Mode jour */
+.light-mode .btn-outline-secondary {
+    background-color: #898989!important ;/* Vert assombri */
+    font-size : 3vh;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Pied de page */
+footer {
+    background-color: #1e1e1e73;
+    color: #388e3c;  
+    padding: 2vh;
+    text-align: center;
+    font-size: 1.8vh;
+    margin-top: auto;
+}
+
+.light-mode footer {
+    background-color: #ffffff00;  /* Fond blanc */
+    color: #333333;  /* Texte sombre */
+    border-top: 1px solid #ffffff00;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease, color 0.3s ease;
+}
+
+.green-text {
+    color: #388e3c;  /* Texte spécifique en vert */
+    font-weight: bold;
+}
+
+
+.list-group-item {
+    background-color: #1a1a1a;  /* Fond des capteurs */
+    color: #ffffff;  /* Texte blanc */
+    border-color: #333333;  /* Bordure discrète */
+}
+
+.list-group-item:hover {
+    background-color: #2c2c2c;  /* Surbrillance au survol */
+}
+
+.light-mode .list-group-item {
+    background-color: #f9f9f9;  /* Fond clair */
+    color: #333333;  /* Texte foncé */
+    border-color: #dddddd;  /* Bordure plus visible */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease, color 0.3s ease;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode .list-group-item:hover {
+    background-color: #eaeaea;  /* Surbrillance claire */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-success {
+    background-color: #31b337 !important;  /* Vert assombri */
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    transition: color 0.3s ease, color 0.3s ease;
+
+}
+
+.btn-danger {
+    background-color: #d32f2f !important;  /* Rouge foncé */
+    color : #fff;
+    border: none;
+    font-weight: bold;
+    transition: color 0.3s ease, color 0.3s ease;
+
+
+}
+.light-mode .btn-success {
+    background-color: #31b337 !important;
+    color : #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.light-mode .btn-danger {
+    background-color: #f44336 !important;
+    color : #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.list-group-item.active {
+    background-color: #43a047;
+    border-color: #388e3c;
+}
+
+.card-logement {
+    background-color: #1e1e1e;  /* Fond sombre */
+    color: #b0b0b0;  /* Texte blanc */
+    border: 1px solid #333333;  /* Bordure subtile */
+    border-radius: 1vh;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.5);  /* Ombre douce */
+    margin-bottom: 2vh;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-logement:hover {
+    background-color: #2c2c2c;  /* Légèrement plus clair au survol */
+    transform: translateY(-5px);  /* Légère élévation */
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.7);
+}
+
+.text-muted {
+    color: #b0b0b0 !important;  /* Gris clair adapté au fond sombre */
+}
+
+.card-capteur {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 1vh;
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.5);
+    margin-bottom: 3vh;
+    padding: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-capteur:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1.5vh 3vh rgba(0, 0, 0, 0.8);
+    background-color: #1c1c1c;  /* Fond légèrement éclairci au survol */
+}
+
+.card-capteur img {
+    width: 100%;
+    height: 200px;
+    filter: brightness(70%);  /* Assombrir les images */
+    object-fit: cover;
+}
+
+.card-capteur .card-body {
+    padding: 2vh;
+}
+
+.card-capteur .card-title {
+    font-size: 2.2vh;
+    font-weight: bold;
+}
+
+.card-capteur{
+    color: #b0b0b0 !important;
+}
+.light-mode .card-capteur {
+    color: #333333 !important;  /* Texte plus sombre pour le jour */
+    transition: color 0.3s ease, color 0.3s ease;
+}
+
+.bg-primary {
+    background-color: #2e7d32 !important;
+}
+
+.text-primary {
+    color: #2e7d32 !important;  /* Vert fluo */
+}
+
+/* Formulaires: Champs de texte (input, select, textarea) */
+.form-control, .form-select {
+    background-color: #2c2c2c;  /* Fond sombre pour les champs */
+    color: #fdfdfd;  /* Texte en gris clair */
+    border: 1px solid #555555;  /* Bordure subtile */
+    height: 50px;  /* Hauteur uniforme */
+}
+
+.form-control::placeholder,
+.form-select::placeholder {
+    color: #888888;  /* Placeholder en gris moyen */
+}
+
+.form-control:focus,
+.form-select:focus {
+    color: #b0b0b0;  /* Texte en gris clair pendant la saisie */
+    background-color: #333333;  /* Fond légèrement plus clair au focus */
+    border-color: #76ff03;  /* Bordure verte fluo au focus */
+    box-shadow: none;  /* Supprimer l'ombre par défaut de Bootstrap */
+}
+
+
+
+
+/* Forcer les dimensions uniformes des cartes */
+.row .col-md-6.col-lg-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.row .col-md-6.col-lg-4 .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 2vh;
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.5);
+    border-radius: 1vh;
+    background-color: #1e1e1e;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Mode jour */
+.light-mode .card {
+    background-color: #ffffff !important;  /* Fond blanc */
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);  /* Ombre plus légère */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+/* Fixer la hauteur pour les cartes de la rangée supérieure */
+.row .col-md-6.col-lg-4 {
+    flex: 1 1 auto;
+    min-height: 30vh;
+}
+
+/* Ajuster la carte des factures */
+.row .col-md-12 .card {
+    height: auto;
+}
+
+
+
+/* Ajuster les labels */
+label {
+    color: #bdbdbd;  /* Gris clair */
+}
+
+.chart-dark {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease, color 0.3s ease;
+
+}
+/* Mode jour */
+.light-mode .chart-dark {
+    background-color: #ffffff;  /* Fond blanc */
+    color: #333333;  /* Texte sombre */
+    border: 1px solid #ddd;  /* Bordure subtile */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#chartContainer,
+#lineChartContainer {
+    width: 100%;
+    height: 500px;  /* Hauteur fixe */
+    display: none;  /* Cacher par défaut */
+}
+.services-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    gap: 20px;
+    max-width: 1000px; /* Largeur fixe */
+    width: 100%;
+}
+
+.service-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 250px;  /* Taille d'image plus petite */
+    object-fit: cover;
+}
+
+.service-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+}
+
+.service-info h3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.service-info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+/* Mode Nuit/Jour */
+
+/* Style du bouton lune/soleil */
+.theme-toggle {
+    position: fixed;
+    top: 38px;
+    right: 150px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.light-mode .theme-toggle {
+    color: #333;
+    transition: color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover { /* Transformations au survol en plus sombre */
+    transform: scale(1.1); /* Légèrement agrandi */
+    background-color: #ffffff2d; /* Fond blanc transparent */
+
+}
+
+/* Mode nuit (thème actuel) */
+
+
+.dark-mode .form-control, 
+.dark-mode .form-select, 
+.dark-mode .card{
+    background-color: #2c2c2c;
+    color: #fdfdfd;
+    border: 1px solid #555555;
+}
+.dark-mode .btn {
+    background-color: #008323;
+    color: #fdfdfd;
+    border: 1px solid #555555;
+    
+}
+
+/* Mode jour */
+
+
+.light-mode .form-control, 
+.light-mode .form-select, 
+.light-mode .card{
+    background-color: #f9f9f9;
+    color: #333333;
+    border: 1px solid #cccccc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease, color 0.3s ease;
+} 
+.light-mode .btn {
+    background-color: #008323;
+    border: 1px solid #cccccc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+

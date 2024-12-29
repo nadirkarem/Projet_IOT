@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLogement</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/style.css?v=1.0">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="/static/images/logo.png" alt="Logo EcoLogement" style="height: 75px; margin-right: 10px;">
+                EcoLogis
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="/">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/consommation">Consommation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/capteurs">Capteurs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logement">Logements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/configuration">Configuration</a></li>
+                </ul>
+                <button id="themeToggle" class="theme-toggle">
+                    🌙
+                </button>
+            </div>
+        </div>
+        
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container mt-4">
+        <h1 class="text-center">Bienvenue sur EcoLogement</h1>
+        <p class="text-center">Gérez vos logements, capteurs et factures de manière simple et efficace.</p>
+        <div class="services-wrapper">
+        <div class="services-container">
+            <div class="service-card">
+                <img src="static/images/consommation.jpg" alt="Consommation">
+                <div class="service-info">
+                    <h3>Consommation</h3>
+                    <p>Analysez et optimisez votre consommation énergétique.</p>
+                    <button onclick="location.href='/consommation';">EN SAVOIR PLUS</button>
+                </div>
+            </div>
+    
+            <div class="service-card">
+                <img src="static/images/capteurs.jpg" alt="Capteurs">
+                <div class="service-info">
+                    <h3>Capteurs</h3>
+                    <p>Gérez vos capteurs intelligents pour un logement plus connecté.</p>
+                    <button onclick="location.href='/capteurs';">EN SAVOIR PLUS</button>
+                </div>
+            </div>
+    
+            <div class="service-card">
+                <img src="static/images/logements.jpg" alt="Logements">
+                <div class="service-info">
+                    <h3>Logements</h3>
+                    <p>Visualisez et administrez vos logements en toute simplicité.</p>
+                    <button onclick="location.href='/logement';">EN SAVOIR PLUS</button>
+                </div>
+            </div>
+    
+            <div class="service-card">
+                <img src="static/images/configuration.jpg" alt="Configuration">
+                <div class="service-info">
+                    <h3>Configuration</h3>
+                    <p>Configurez et personnalisez vos équipements et paramètres.</p>
+                    <button onclick="location.href='/configuration';">EN SAVOIR PLUS </button> 
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    
+    
+
+    <!-- Pied de page -->
+    <footer class="text-center footer py-3 mt-5">
+        <p>&copy; 2024 <span class="green-text">Logement Éco-responsable</span></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./static/js/modenuit.js"></script>
+
+    
+</body>
+</html>

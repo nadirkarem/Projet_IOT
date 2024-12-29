@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capteurs et Actionneurs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/style.css?v=1.0">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="/static/images/logo.png" alt="EcoLogement Logo" style="height: 75px; margin-right: 10px;">
+                EcoLogis
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/consommation">Consommation</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/capteurs">Capteurs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logement">Logements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/configuration">Configuration</a></li>
+                </ul>
+                <button id="themeToggle" class="theme-toggle">
+                    🌙
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Contenu principal -->
+    <!-- <div class="container mt-4">
+        <h2 class="text-center">Liste des Capteurs et Actionneurs</h2>
+        <ul class="list-group" id="sensorList">
+             Les capteurs seront insérés ici dynamiquement 
+        </ul>
+    </div> -->
+    <div class="container mt-4">
+        <h2 class="text-center">Liste des Capteurs et Actionneurs</h2>
+        <div class="row" id="sensorList">
+            <!-- Les capteurs seront chargés ici dynamiquement -->
+        </div>
+    </div>
+    
+    
+
+    <!-- Pied de page -->
+    <footer class="text-center dark-footer py-3 mt-5">
+        <p>&copy; 2024 <span class="green-text">Logement Éco-responsable</span></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./static/js/capteurs.js?v=1.0"></script>
+    <script src="./static/js/modenuit.js"></script>
+</body>
+</html>
