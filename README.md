@@ -130,9 +130,6 @@ Voici une mise à jour détaillée du README en tenant compte de toutes les part
 - **Graphiques Dynamiques** : Les consommations énergétiques sont affichées sous forme de graphiques interactifs (Google Charts).
 
 
-
----
-
 ## Recommandations pour le professeur
 1. **Si la base de données est vide** :  
    Exécutez `python remplissage.py` pour régénérer les données.
@@ -149,6 +146,15 @@ Voici une mise à jour détaillée du README en tenant compte de toutes les part
 - **CSS et thèmes** : Personnalisez les styles dans `static/css/style.css`.
 - **AJAX et interactivité** : JavaScript dans `static/js/`.
 
----
+## Remarque sur le Plagiat et l'Utilisation de l'IA
 
-Si vous rencontrez des problèmes, n'hésitez pas à me contacter.
+Ce projet est personnel, et j'encourage toute personne à s'en inspirer ou à réutiliser le code si nécessaire. Toutefois, je tiens à préciser que certains segments de code ont été générés avec l'aide d'une intelligence artificielle (ChatGPT). Chaque fois que du code a été généré par l'IA, cela a été clairement sourcé sous forme de commentaires avec des prompts appropriés.
+
+Je n'ai utilisé aucun code provenant de plateformes comme Stack Overflow ou d'autres sites similaires. Les prompts fournis dans les commentaires sont susceptibles de générer du code similaire, mais les résultats exacts peuvent varier en fonction :
+
+des fichiers ou du contexte partagé avec l'IA,
+des discussions et itérations faites au fil du temps,
+des ajustements manuels et personnalisations spécifiques au projet.
+Ainsi, il est peu probable que quelqu'un obtienne exactement le même résultat en utilisant uniquement les prompts, sans avoir accès au contexte et aux données associées à ce projet.
+
+Je reste disponible pour toute clarification sur les choix techniques ou l'origine des différentes parties du code.
