@@ -231,11 +231,11 @@ Ce projet est personnel, et j'encourage toute personne à s'en inspirer ou à r�
 
 Je n'ai utilisé aucun code provenant de plateformes comme Stack Overflow ou d'autres sites similaires. Les prompts fournis dans les commentaires sont susceptibles de générer du code similaire, mais les résultats exacts peuvent varier en fonction :
 
-des fichiers ou du contexte partagé avec l'IA,
+- des fichiers ou du contexte partagé avec l'IA,
 
-des discussions et itérations faites au fil du temps,
+- des discussions et itérations faites au fil du temps,
 
-des ajustements manuels et personnalisations spécifiques au projet.
+- des ajustements manuels et personnalisations spécifiques au projet.
 
 Ainsi, il est peu probable que quelqu'un obtienne exactement le même résultat en utilisant uniquement les prompts, sans avoir accès au contexte et aux données associées à ce projet.
 
