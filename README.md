@@ -97,19 +97,97 @@ uvicorn main:app --reload
 Voici une mise à jour détaillée du README en tenant compte de toutes les parties du projet (Partie 1, Partie 2 et Partie 3). J'ai également ajouté des détails sur le mode nuit/jour et la structure du projet.
 
 
-## Détails des Parties
-### Partie 1 - Base de Données
-- **Objectif** : Création et remplissage de la base de données `logement.db` pour stocker les logements, capteurs/actionneurs, mesures et factures.
-- **Fichier** : `logement.sql` (création des tables, types de capteurs et exemples de mesures)
-- **Complément** : `remplissage.py` insère des données initiales et simule des mesures régulières.
+## Détails des Parties**Partie 1 - Base de Données**  
 
-### Partie 2 - Serveur RESTful
-- **Objectif** : Développement du serveur REST avec FastAPI permettant la manipulation des données via des requêtes GET et POST.
-- **Exercices** :
-  - **Exercice 1** : Remplissage via API REST (`remplissage.py`)
-  - **Exercice 2** : Génération de graphiques interactifs (Google Charts)
-  - **Exercice 3** : Intégration d'une API météo
-  - **Exercice 4** : Utilisation des capteurs et actionneurs pour agir sur les logements
+**Objectif**  
+Création et remplissage de la base de données `logement.db` pour stocker les informations relatives aux logements, capteurs/actionneurs, mesures et factures.  
+
+**Fichiers**  
+- **`logement.sql`** : Contient les requêtes SQL pour créer les tables nécessaires (logement, pièce, capteur_actionneur, mesure, facture) ainsi que des types de capteurs et factures.  
+- **`remplissage.py`** : Remplit automatiquement la base de données avec des données initiales et génère des mesures de manière régulière pour simuler une activité.  
+
+**Vérification et Tests**  
+Pour vérifier la bonne création et le remplissage de la base de données, plusieurs commandes peuvent être utilisées :  
+
+- **Exemple de commande terminal pour exécuter le script**  
+```bash
+python remplissage.py
+```  
+Cela crée ou remplit `logement.db` avec des logements, capteurs et factures fictifs.  
+
+- **Requêtes pour vérifier la base de données avec SQLite**  
+```bash
+sqlite3 logement.db
+SELECT * FROM logement;
+SELECT * FROM capteur_actionneur;
+SELECT * FROM facture;
+SELECT * FROM mesure;
+```  
+
+- **Liens de vérification via le navigateur (Partie API REST, voir Partie 2)**  
+- **Vérification des logements**  
+```bash
+http://localhost:8000/api/logements
+```  
+- **Détails d’un logement spécifique (id=1)**  
+```bash
+http://localhost:8000/api/logements/1
+```  
+- **Liste des capteurs**  
+```bash
+http://localhost:8000/api/capteurs
+```  
+
+**Partie 2 - Serveur RESTful**  
+
+**Objectif**  
+Développement du serveur REST avec FastAPI pour permettre la manipulation et la récupération des données de la base via des requêtes HTTP (GET/POST).  
+
+**Exercices**  
+- **Exercice 1** : Remplissage via API REST (fichier `remplissage.py` effectue des requêtes POST pour ajouter des données)  
+- **Exercice 2** : Génération de graphiques interactifs (Google Charts intégrés dans des routes FastAPI)  
+- **Exercice 3** : Intégration d'une API météo pour afficher des prévisions associées aux logements  
+- **Exercice 4** : Gestion des capteurs/actionneurs via API pour interagir avec les logements (ex: allumer/éteindre des capteurs)  
+
+**Commandes pour tester les routes API (Curl et navigateurs)**  
+
+- **Récupérer la liste des logements**  
+```bash
+curl http://localhost:8000/api/logements
+```  
+Ou dans le navigateur :  
+```bash
+http://localhost:8000/api/logements
+```  
+
+- **Ajouter un logement via POST**  
+```bash
+curl -X POST http://localhost:8000/api/logement -H "Content-Type: application/json" \
+-d '{"nom": "Maison de Jean", "numero": "25", "rue": "Rue des Lilas", "code_postal": "75014", "ville": "Paris"}'
+```  
+
+- **Récupérer les capteurs existants**  
+```bash
+curl http://localhost:8000/api/capteurs
+```  
+Ou dans le navigateur :  
+```bash
+http://localhost:8000/api/capteurs
+```  
+
+- **Changer l’état d’un capteur (id=1)**  
+```bash
+curl -X POST http://localhost:8000/api/capteurs/1/toggle
+```  
+
+- **Afficher les factures d'un logement (id=1)**  
+```bash
+curl http://localhost:8000/api/factures/1
+```  
+Ou :  
+```bash
+http://localhost:8000/api/factures/1
+```  
 
 ### Partie 3 - Application Web
 - **Objectif** : Création de l'interface utilisateur pour la visualisation et la gestion des capteurs, logements et consommations.
@@ -119,7 +197,8 @@ Voici une mise à jour détaillée du README en tenant compte de toutes les part
   - **Ajout de nouveaux capteurs/logements**
   - **Mode nuit/jour** : Bouton interactif permettant de basculer entre mode clair et sombre.
 
-
+- **Tests**
+Tous les tests pourront être effectué directement sur le site à l'adresse https://localhost:8000
 
 ## Fonctionnalités principales
 - **Gestion des logements** : Ajout, modification et suppression de logements
