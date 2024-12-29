@@ -1,3 +1,23 @@
+# Source du code:
+
+# Je souhaite créer une application web avec FastAPI pour gérer des logements, capteurs et factures.
+# L'application devra inclure plusieurs routes GET et POST pour interagir avec une base de données SQLite.
+# Chaque entité (logement, capteur, facture) sera représentée par des modèles Pydantic afin de valider les données reçues lors des requêtes.  
+
+# L'application devra également servir des pages HTML à partir de fichiers stockés dans un répertoire `templates` en utilisant des routes distinctes pour chaque section.
+# Un système de fichiers statiques sera mis en place pour charger des feuilles de style CSS et des scripts JavaScript.
+# Je veux aussi pouvoir ajouter des routes API pour récupérer ou modifier les données en fonction des besoins de l'application.  
+
+# Explications supplémentaires:
+  
+# Les routes GET et POST ont été ajoutées en s'inspirant des exercices précédents du TP.
+# Elles ont été adaptées pour correspondre aux besoins de l'application finale.
+# Certaines fonctionnalités, comme la récupération des logements ou l'ajout de factures, ont été développées à partir de prompts spécifiques pour générer les bases de ces routes.  
+
+# La structure générale du projet, comprenant l'utilisation de Pydantic pour la validation des données et SQLite pour la persistance,
+# a été obtenue à l'aide de prompts génériques sur la création d'une application FastAPI avec une base de données relationnelle. 
+# D'autres prompts ont permis d'ajouter des détails comme la récupération des capteurs par logement ou la gestion des états des capteurs.
+
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -9,7 +29,6 @@ from fastapi import Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi import Request
-import traceback  # Pour afficher plus d'infos
 
 app = FastAPI()
 
@@ -36,7 +55,7 @@ class Facture(BaseModel):
     id_logement: int
     id_type: int
     montant: float
-    mois: str  # Ajout du champ mois dans le modèle Pydantic
+    mois: str  
 
 class Capteur(BaseModel):
     nom: str
@@ -103,9 +122,6 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
             "body": await request.json()  # Données envoyées par le client
         }
     )
-
-
-
 
 # API pour gérer les logements
 @app.get("/api/logements")

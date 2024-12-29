@@ -1,4 +1,4 @@
-TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- À mettre en commentaire sur certains PC à cause de conflits.
 
 -- Qst 2 : Suppression de toutes les tables de la base de données
 DROP TABLE IF EXISTS logement;

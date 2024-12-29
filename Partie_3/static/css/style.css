@@ -1,3 +1,12 @@
+/* Prompt utilisé :
+"Génère un fichier CSS de base pour un site web utilisant Google Fonts, avec une mise en page responsive et des styles modernes pour des boutons, des formulaires et des cartes Bootstrap. Précise que le site doit avoir un thème sombre (mode nuit) et un mode clair (mode jour) avec une transition fluide entre les deux."
+
+Ensuite, les sections spécifiques pour la navigation, les boutons et les containers de chaque page HTML ont été créées à partir des prompts intégrés directement dans les fichiers HTML.
+La partie sur la bascule entre le mode sombre et le mode clair a nécessité un prompt supplémentaire :
+"Crée un bouton permettant de basculer entre un mode nuit et un mode jour, en modifiant la couleur de fond, du texte et des éléments interactifs avec une transition CSS fluide."
+
+Le reste du fichier CSS a été ajusté manuellement pour répondre aux besoins du projet et harmoniser les styles selon les exigences spécifiques du design final. */
+
 /* Importation des Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');

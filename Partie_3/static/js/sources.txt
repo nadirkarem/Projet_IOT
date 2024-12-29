@@ -1,0 +1,11 @@
+Source du Code:
+
+Ce projet a été réalisé en combinant plusieurs sources de code, incluant :
+    Code généré par IA (ChatGPT) – Des portions significatives du code (HTML, CSS, Python, JavaScript) ont été générées à l'aide de prompts spécifiques. Les prompts utilisés pour chaque fichier sont précisés dans les fichiers .html, .css et .py correspondants.
+    Modifications personnelles – Après génération, de nombreuses parties du code ont été ajustées, corrigées et complétées par moi-même afin de répondre aux besoins spécifiques du projet.
+    Mode Nuit/Jour – La logique CSS et JavaScript pour l'alternance entre les thèmes clair et sombre a été inspirée d'un prompt spécifique concernant la bascule de thème et intégré dans modenuit.js et les fichiers CSS.
+
+Transparence et Plagiat
+    Ce projet est personnel et ne fait usage d'aucun code directement extrait de plateformes comme Stack Overflow ou GitHub (hors bibliothèque et API publiques).
+    Chaque code généré par IA est dûment mentionné et référencé afin de respecter la politique anti-plagiat de l'école.
+    Bien que le code résultant puisse ressembler aux suggestions de l'IA, il a souvent été personnalisé et adapté pour répondre à des besoins spécifiques non couverts par le prompt initial.

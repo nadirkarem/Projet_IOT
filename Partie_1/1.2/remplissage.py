@@ -7,6 +7,18 @@ conn = sqlite3.connect('logement.db')
 conn.row_factory = sqlite3.Row
 c = conn.cursor()
 
+# Source code suivant:
+    # Crée une fonction Python pour insérer des mesures et des factures aléatoires dans une base de données SQLite. 
+    # La fonction d'insertion des mesures doit commencer par récupérer tous les identifiants des capteurs depuis la table capteur_actionneur. 
+    # Pour chaque capteur, elle doit ajouter deux mesures aléatoires avec des valeurs comprises entre 10 et 30, arrondies à deux décimales. 
+    # Les dates d'insertion doivent être aléatoires dans les 30 derniers jours, générées avec datetime.now() et timedelta. Les mesures doivent être insérées dans la table mesure avec les champs valeur, date_insertion et id_capteur.
+
+    # La fonction d'insertion des factures doit récupérer tous les identifiants des logements depuis la table logement. 
+    # Pour chaque logement, elle doit générer quatre factures avec un type choisi aléatoirement parmi Électricité, Eau et Déchets.
+    # La date de la facture doit être dans les 60 derniers jours, avec des montants aléatoires entre 20 et 100 euros, arrondis à deux décimales.
+    # Un champ valeur_consomme doit être ajouté avec des valeurs comprises entre 50 et 500. Les factures doivent être insérées dans la table facture avec les champs type, date, montant, valeur_consomme et id_logement. 
+    # Les requêtes SQL doivent utiliser des paramètres sécurisés avec execute() pour éviter les injections SQL.
+    
 # Fonction pour insérer des mesures pour chaque capteur
 def ajouter_mesures():
     c.execute('SELECT id_capteur FROM capteur_actionneur')

@@ -20,6 +20,21 @@ import time
 # curl -X GET http://localhost:8888/meteo
 # curl -X GET http://localhost:8888/meteo/1
 
+# Sources des codes suivants:
+    # Exercice 1 – Gestion des Requêtes HTTP avec SQLite (Mesures et Factures)
+        # "Écris moi un code de base de structure d'un serveur HTTP en Python avec http.server qui peut gérer des requêtes GET et POST pour interagir avec une base de données SQLite. 
+        # Laisse moi des trous pour que j'implémente des routes pour ajouter et récupérer des mesures de capteurs et des factures mais je veux la ligne nécessaire pour que lorsqu'une mesure est ajoutée, on insère automatiquement la date d'insertion. 
+        # Pour les factures, insère des données comme le type, la date, le montant et la consommation associée."
+    # Exercice 2 – Générer un Graphique avec Google Charts
+        # "Développe une route Python qui affiche une page HTML contenant un graphique Google Charts.
+        # Le graphique doit être généré à partir des données d'une table facture dans une base de données SQLite, et représenter la répartition des montants par type de facture (électricité, eau, etc.). 
+        # Le serveur doit répondre sur /factures/chart et afficher dynamiquement les données sous forme de camembert."
+    # Exercice 3 – Intégration de l'API OpenWeatherMap
+        # "Ajoute une route Python qui interroge l'API OpenWeatherMap pour obtenir les prévisions météo de la ville de Paris. 
+        # La route doit répondre sur /meteo, et on doit retourner la date, la température et la description de la météo."
+    # Exercice 4 – Simulation de Capteur DHT
+        # "Implémente une simulation de capteur DHT en Python avec un thread qui met à jour périodiquement la température et l'humidité. 
+        # Crée les classes dont j'aurai besoin qui génereront des valeurs aléatoires de température et d'humidité toutes les 5 secondes.
 
 DB_PATH = "logement.db"
 
@@ -249,14 +264,7 @@ def start_servers():
         http_server.shutdown()
         dht_server.shutdown()
 
-
-# # Class for handling DHT data requests (on a separate port)
-# class MyDHTHandler(socketserver.BaseRequestHandler):
-#     def handle(self):
-#         # Send simulated DHT data as JSON
-#         data = json.dumps({"temperature": DHTThread.temperature, "humidity": DHTThread.humidity})
-#         self.request.sendall(data.encode())
-
+# Class pour le serveur DHT
 class DHTHandler(BaseHTTPRequestHandler):
     # Méthode GET pour récupérer les données simulées du capteur DHT
     def do_GET(self):
